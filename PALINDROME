@@ -10,9 +10,9 @@ int main() {
     original = num;
 
     while (num != 0) {
-        rem = num % 10;          // last digit nikalna
+        rem = num % 10;          
         reverse = reverse * 10 + rem; 
-        num = num / 10;          // last digit remove
+        num = num / 10;          
     }
 
     if (original == reverse)
