@@ -1,0 +1,32 @@
+#include <iostream>
+#include <unordered_map>
+using namespace std;
+
+void mostFrequent(int arr[], int n) {
+    unordered_map<int, int> freq;
+
+    for (int i = 0; i < n; i++) {
+        freq[arr[i]]++;
+    }
+
+    int maxFreq = 0;
+    int element = arr[0];
+
+    for (auto it : freq) {
+        if (it.second > maxFreq) {
+            maxFreq = it.second;
+            element = it.first;
+        }
+    }
+
+    cout << "Element: " << element << ", Frequency: " << maxFreq;
+}
+
+int main() {
+    int arr[] = {1, 2, 2, 3, 3, 3, 4};
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    mostFrequent(arr, n);
+
+    return 0;
+}
